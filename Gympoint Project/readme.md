@@ -1,10 +1,6 @@
 # Gympoint Project
 > Challenge 02 - goStack 9.0
 
-[![NPM Version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
-[![Downloads Stats][npm-downloads]][npm-url]
-
 A simple project about how we use Node to create an struct using MVC concept and many packages too.
 
 ## Steps
