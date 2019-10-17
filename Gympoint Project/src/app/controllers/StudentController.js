@@ -10,18 +10,16 @@ class StudentController {
       email: Yup.string()
         .email()
         .required(),
-      age: Yup.number().required(),
-      weight: Yup.number().required(),
-      height: Yup.number().required()
+      age: Yup.number().required().integer().positive(),
+      weight: Yup.number().required().positive(),
+      height: Yup.number().required().positive()
 
     });
 
     if (!(await schema.isValid(req.body))) {
       return res.status(400).json({ error: 'Validation fails' });
     }
-
-    console.log(req.body.email)
-
+    
     const studentExists = await Student.findOne({
       where: {
         email: req.body.email,
@@ -31,7 +29,7 @@ class StudentController {
     if (studentExists) {
       return res.status(400).json({ error: 'Student already exists' });
     }
-
+    
     const { id, name, email, age, weight, height } = await Student.create(req.body);
 
     return res.json({
@@ -48,30 +46,32 @@ class StudentController {
     const schema = Yup.object().shape({
       name: Yup.string(),
       email: Yup.string().email().required(),
-      age: Yup.number(),
-      weight: Yup.number(),
-      height: Yup.number()
+      age: Yup.number().integer().positive(),
+      weight: Yup.number().positive(),
+      height: Yup.number().positive()
     });
 
     if (!(await schema.isValid(req.body))) {
       return res.status(400).json({ error: 'Validation fails' });
     }
 
-    const student = await Student.findOne({ where: { email: req.body.email } });
-    if (!student) {
-      return res.status(401).json({ error: 'Student not found.' });
+    const { email } = req.body;
+
+    const student = await Student.findByPk(req.userId);
+
+    if (email !== student.email) {
+      const userExists = await Student.findOne({
+        where: { email },
+      });
+
+      if (userExists) {
+        return res.status(400).json({ error: 'Student already exists.' });
+      }
     }
 
-    const { id, name, email, age, weight, height } = await user.update(req.body);
+    const studentFields = await student.update(req.body);
 
-    return res.json({
-      id,
-      name,
-      email,
-      age,
-      weight,
-      height
-    });
+    return res.json(studentFields);
   }
 }
 
