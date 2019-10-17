@@ -5,7 +5,7 @@ A simple project about how we use Node to create an struct using MVC concept and
 
 ## Steps
 
-#### Resolve dependencies:
+#### Resolve dependencies
 
 ```powershell
 yarn
