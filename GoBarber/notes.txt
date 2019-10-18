@@ -1,0 +1,18 @@
+## docker
+# Creating a docker to SQL with Postgres
+docker run --name databases-container -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres:11
+docker ps
+docker stop databases-container
+docker ps -a
+docker start databases-container
+docker logs databases-container
+
+# Creating a docker to no-SQL with MongoDB
+docker run --name nosql-databases-container -p 27017:27017 -d -t mongo
+test: http://localhost:27017
+
+## check ports open
+netstat -ano
+
+## template-engine mail
+handlebarsjs
