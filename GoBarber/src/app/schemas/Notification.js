@@ -21,4 +21,5 @@ const NotificationSchema = new mongoose.Schema(
 	}
 );
 
+// Teste Ciro commit
 export default mongoose.model('Notification', NotificationSchema);
