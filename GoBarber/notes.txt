@@ -18,15 +18,4 @@ netstat -ano
 handlebarsjs
 
 
-## eslint - configure
-yarn eslint --init
-To check syntax, find problems, and enforce code style
-JavaSript modules
-None
-Node
-Use a popular
-Airbnb
-JavaSript
-Y
-remove package-lock.json
-yarn
+## yarn eslint --fix src --ext .js
