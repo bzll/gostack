@@ -11,6 +11,13 @@ docker logs databases-container
 docker run --name nosql-databases-container -p 27017:27017 -d -t mongo
 test: http://localhost:27017
 
+# Creating a database key-value with Redis
+docker run --name redis -p 6379:6379 -d redis:alpine
+# if connectin 127.0.0.1 refuse, check the network that is in use to redis
+docker network list
+docker network nat inspect
+# take the IPV4 from Redis and use it
+
 ## check ports open
 netstat -ano
 

@@ -17,6 +17,9 @@ class ScheduleController {
 		}
 
 		const { date } = req.query;
+		if (!date) {
+			return res.status(400).json({ error: 'Invalid date' });
+		}
 		const parsedDate = parseISO(date);
 
 		const appointments = await Appointment.findAll({
