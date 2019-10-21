@@ -1,28 +1,23 @@
 module.exports = {
 	up: (queryInterface, Sequelize) => {
-		return queryInterface.createTable('users', {
+		return queryInterface.createTable('plans', {
 			id: {
 				type: Sequelize.INTEGER,
 				allowNull: false,
 				autoIncrement: true,
 				primaryKey: true,
 			},
-			name: {
+			title: {
 				type: Sequelize.STRING,
 				allowNull: false,
 			},
-			email: {
-				type: Sequelize.STRING,
+			duration: {
+				type: Sequelize.INTEGER,
 				allowNull: false,
 				unique: true,
 			},
-			password_hash: {
-				type: Sequelize.STRING,
-				allowNull: false,
-			},
-			provider: {
-				type: Sequelize.BOOLEAN,
-				defaultValue: false,
+			price: {
+				type: Sequelize.INTEGER,
 				allowNull: false,
 			},
 			created_at: {
@@ -42,8 +37,7 @@ module.exports = {
       Return a promise to correctly handle asynchronicity.
 
       Example:
-      return queryInterface.dropTable('users');
-    */
-		return queryInterface.dropTable('users');
+			*/
+		return queryInterface.dropTable('plans');
 	},
 };

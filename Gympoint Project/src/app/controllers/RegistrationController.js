@@ -1,9 +1,9 @@
 // schema validator
 import * as Yup from 'yup';
 
-import Student from '../models/Student';
+import Registration from '../models/Registration';
 
-class StudentController {
+class RegistrationController {
 	async store(req, res) {
 		const schema = Yup.object().shape({
 			name: Yup.string().required(),
@@ -26,17 +26,17 @@ class StudentController {
 			return res.status(400).json({ error: 'Validation fails' });
 		}
 
-		const studentExists = await Student.findOne({
+		const registrationExists = await Registration.findOne({
 			where: {
 				email: req.body.email,
 			},
 		});
 
-		if (studentExists) {
-			return res.status(400).json({ error: 'Student already exists' });
+		if (registrationExists) {
+			return res.status(400).json({ error: 'Registration already exists' });
 		}
 
-		const { id, name, email, age, weight, height } = await Student.create(
+		const { id, name, email, age, weight, height } = await Registration.create(
 			req.body
 		);
 
@@ -69,22 +69,22 @@ class StudentController {
 
 		const { email } = req.body;
 
-		const student = await Student.findByPk(req.userId);
+		const registration = await Registration.findByPk(req.userId);
 
-		if (email !== student.email) {
-			const userExists = await Student.findOne({
+		if (email !== registration.email) {
+			const userExists = await Registration.findOne({
 				where: { email },
 			});
 
 			if (userExists) {
-				return res.status(400).json({ error: 'Student already exists.' });
+				return res.status(400).json({ error: 'Registration already exists.' });
 			}
 		}
 
-		const studentFields = await student.update(req.body);
+		const registrationFields = await registration.update(req.body);
 
-		return res.json(studentFields);
+		return res.json(registrationFields);
 	}
 }
 
-export default new StudentController();
+export default new RegistrationController();

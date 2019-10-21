@@ -29,3 +29,8 @@ handlebarsjs
 
 
 ## yarn eslint --fix src --ext .js
+
+
+## sequelize
+yarn sequelize migration:create --name=plans-management
+yarn sequelize db:migrate
