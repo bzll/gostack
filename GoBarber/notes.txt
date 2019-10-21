@@ -6,6 +6,9 @@ docker stop databases-container
 docker ps -a
 docker start databases-container
 docker logs databases-container
+docker restart $(docker ps -a -q)
+docker start $(docker ps -a -q -f status=exited)
+docker stop $(docker ps -q)
 
 # Creating a docker to no-SQL with MongoDB
 docker run --name nosql-databases-container -p 27017:27017 -d -t mongo
