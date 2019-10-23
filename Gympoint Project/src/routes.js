@@ -21,13 +21,13 @@ routes.put('/students', StudentController.update);
 
 routes.get('/plan', PlanController.index);
 routes.post('/plan', PlanController.store);
-routes.put('/plan', PlanController.update);
-routes.delete('/plan', PlanController.delete);
+routes.put('/plan/:planId', PlanController.update);
+routes.delete('/plan/:planId', PlanController.delete);
 
 routes.get('/registration', RegistrationController.index);
 routes.post('/registration', RegistrationController.store);
-routes.put('/registration', RegistrationController.update);
-routes.delete('/registration', RegistrationController.delete);
+routes.put('/registration/:registrationId', RegistrationController.update);
+routes.delete('/registration/:registrationId', RegistrationController.delete);
 
 routes.post('/students/:studentId/checkins', CheckinController.store);
 routes.get('/students/:studentId/checkins', CheckinController.index);

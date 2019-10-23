@@ -8,7 +8,8 @@
       "type": "node",
       "request": "attach",
       "name": "Attach",
-      "protocol": "inspector"
+			"protocol": "inspector",
+			"restart": true
     },
     {
       "type": "node",
