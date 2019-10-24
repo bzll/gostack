@@ -16,7 +16,7 @@ module.exports = {
 			},
 			question: {
 				type: Sequelize.STRING,
-				allowNull: false,
+				allowNull: true,
 			},
 			answer: {
 				type: Sequelize.STRING,
@@ -24,7 +24,7 @@ module.exports = {
 			},
 			answer_at: {
 				type: Sequelize.DATE,
-				allowNull: false,
+				allowNull: true,
 			},
 			created_at: {
 				type: Sequelize.DATE,
