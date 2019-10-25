@@ -64,7 +64,11 @@ class RegistrationController {
 		await Queue.add(RegistrationMail.key, {
 			plan: existPlan,
 			student: existStudent,
-			registration: Registration,
+			registration: {
+				price,
+				start_date,
+				end_date,
+			},
 		});
 
 		return res.json({
