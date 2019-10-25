@@ -5,6 +5,7 @@ const routes = require('./routes');
 */
 // eslint-disable-next-line linebreak-style
 // If you install the dependence sucrase and nodemon, you can change the syntax of module importantion
+import 'dotenv/config';
 import express from 'express';
 import routes from './routes';
 
