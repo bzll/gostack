@@ -9,7 +9,7 @@ class PostList extends Component {
         id: 1,
         author: {
           name: 'Carla Pacheco',
-          avatar: 'https://i.pravatar.cc/150?img=49'
+          avatar: 'https://i.pravatar.cc/150?img=30'
         },
         date: '30 Out 2019',
         content: 'Ser Jedi e impossivel?',
