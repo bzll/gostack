@@ -8,11 +8,11 @@ class PostList extends Component {
       {
         id: 1,
         author: {
-          name: 'Vanessa Romero',
+          name: 'Carla Pacheco',
           avatar: 'https://i.pravatar.cc/150?img=49'
         },
         date: '30 Out 2019',
-        content: 'Pessoal, alguém sabe se a Rocketseat está contratando?',
+        content: 'Ser Jedi e impossivel?',
         comments: [
           {
             id: 2,
@@ -22,7 +22,17 @@ class PostList extends Component {
             },
             date: '30 Out 2019',
             content:
-              'A Rocketseat está sempre em busca de novos membros para o time, e geralmente ficamos de olho em quem se destaca no Bootcamp, inclusive 80% do nosso time de devs é composto por alunos do Bootcamp. Além disso, se você tem vontade de ensinar gravando vídeos e criando posts, pode me chamar no Discord! (Sério, me chamem mesmo, esse comentário é real)'
+              'A forca esta com voce padawan, acredite sempre na forca'
+          },
+          {
+            id: 3,
+            author: {
+              name: 'Ciro Bizelli',
+              avatar: 'https://avatars1.githubusercontent.com/u/40134293?s=460&v=4'
+            },
+            date: '30 Out 2019',
+            content:
+              'Always...'
           }
         ]
       },
