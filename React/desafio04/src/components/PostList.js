@@ -39,7 +39,7 @@ class PostList extends Component {
       
     ]
   };
-
+  
   render() {
     const { posts } = this.state;
 
